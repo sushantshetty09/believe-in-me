@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "myagent"
+version = "0.1.0"
+description = "A Local Autonomous Coding Agent running on local open-weights LLMs"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "ollama>=0.1.0",
+    "rich>=13.0.0",
+    "prompt_toolkit>=3.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+]
+
+[project.scripts]
+myagent = "myagent.ui.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
